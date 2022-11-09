@@ -20,6 +20,6 @@ const log = function (value) {
   console.log(value);
 }
 
-let combine = ((sum(2,4)) * (sum(5,2))- 2) / 5
+let combine = divide(subtract(multiply(sum(2, 4), sum(5,2)), 2), 5);
 
 log(combine);

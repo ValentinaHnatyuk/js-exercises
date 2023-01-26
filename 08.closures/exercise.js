@@ -7,4 +7,4 @@ function multiplyByTwo(value) {
   return inner;
 }
 
-console.log(multiplyByTwo(4)(2));
+console.log(multiplyByTwo(4)());

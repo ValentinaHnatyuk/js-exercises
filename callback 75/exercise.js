@@ -1,10 +1,11 @@
 
 function repeatHello(callback) {
-    const repeatHello =  setInterval(callback, 1000);
-    setTimeout(() => clearInterval(repeat), 5000);
+ const intervalId = setInterval(callback, 1000);
+ setTimeout(() => clearInterval(intervalId) , 5000);
 }
 
+function sayHello(){
+    console.log("Hello");
+}
 
-const printHello = () => console.log("Hello");
-
-repeatHello(printHello);
+repeatHello(sayHello);

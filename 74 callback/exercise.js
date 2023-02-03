@@ -1,4 +1,9 @@
-const repeatHello = function(callback) {
+function repeatHello(callback) {
     setInterval(callback, 1000);
 }
-repeatHello (() => console.log("hello")) 
+
+function sayHello(){
+    console.log("Hello");
+}
+
+repeatHello(sayHello);

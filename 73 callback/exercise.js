@@ -1,7 +1,9 @@
 
-const printAsyncName = function(callback, name) {
-    setTimeout (() => callback(), 1000);
-    setTimeout(() => {console.log(name)},2000);
+function printAsyncName(callback, name) {
+ setTimeout(() =>  callback(), 1000);
+ setTimeout(() => console.log(name), 2000);
+ }
+function printName(){
+    console.log("Hello");
 }
-
-printAsyncName(() => console.log("Hello"),"Vallie")
+ printAsyncName(printName,"Vallie");

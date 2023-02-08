@@ -36,3 +36,4 @@ console.log(managerSalary);
 console.log(ctoSalary);
 console.log(developerSalary);
 console.log(otherSalary);
+

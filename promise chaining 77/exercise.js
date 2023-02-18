@@ -1,36 +1,24 @@
 const isLogged = true;
 
+const firstPromise = new Promise((resolve, reject) => {
+  if (isLogged === true) {
+    resolve(Math.random());
+  } else {
+    reject("user is not logged in");
+  }
+});
 
-const myNewPromise = (user) => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            if (user == true) {
-                resolve(Math.random());
-            } else {
-                reject("User not logged in");
-            
-            }
-        }, 500)
-    })
-
-}
-
-const secondPromise = (number) => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            if (number > 0.5) {
-                resolve({ name: "John", age: 24 });
-            } else {
-                reject("Number is too low");
-        }, 1000);
-    })
-}
-
-myNewPromise(isLogged)
-    .then((num) => {
-        console.log(num);
-        return num;
-    })
-    .then((num) => secondPromise(num))
-    .then((obj) => console.log(obj))
-    .catch((err) => console.error(err))
+const secondPromise = (num) => {
+  return new Promise((resolve, reject) => {
+    if (num > 0.5) {
+     const data = `{name: "John", age: 24}`;
+      resolve(data);
+    } else {
+      reject("error");
+    }
+  });
+};
+firstPromise(isLogged)
+  .then((val) => secondPromise(val))
+  .then((data) => console.log(data))
+  .catch((err) => console.log(err));

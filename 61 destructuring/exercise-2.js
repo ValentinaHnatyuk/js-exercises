@@ -6,5 +6,4 @@ const person = {
 };
 
 const {id, firstName, lastName, age} = person;
-
 console.log(id, firstName, lastName, age);

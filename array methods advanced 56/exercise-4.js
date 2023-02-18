@@ -5,7 +5,6 @@ notes.forEach(el => {
     console.log(filter);
 }
 
-  
 
 const notes = [
   {

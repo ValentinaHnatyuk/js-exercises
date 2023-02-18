@@ -4,15 +4,15 @@ class Person {
     this.lastName = lastName;
   }
 
-  static fromObject(person) {
-    const personFromObject = new Person (person.firstName, person.lastName);
-    return personFromObject;
+  static fromObject(obj) {
+    const { firstName, lastName } = obj;
+    return new Person(firstName, lastName);
   }
 }
 
 const obj = {
-  firstName: "Mario",
-  lastName: "Rossi",
+  firstName: 'Mario',
+  lastName: 'Rossi'
 };
 
 const person = Person.fromObject(obj);

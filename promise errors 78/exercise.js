@@ -1,32 +1,32 @@
 const isLogged = true;
 
-const myNewPromise = (user) => {
-    return new Promise((resolve, reject) => {
-            if (user == true) {
-                resolve(Math.random());
-            } else {
-                reject(new Error("User not logged in"))
-            }
-    })
+const firstPromise = new Promise((resolve, reject) => {
+  if (isLogged === true) {
+    resolve(Math.random());
+  } else {
+    reject("user is not logged in");
+  }
+});
 
-}
+const secondPromise = (num) => {
+  return new Promise((resolve, reject) => {
+    if (num > 0.5) {
+     const data = `{name: "John", age: 24}`;
+      resolve(data);
+    } else {
+      reject("error");
+    }
+  });
+};
 
-const secondPromise = (number) => {
-    return new Promise((resolve, reject) => {
-            if (number > 0.5) {
-                resolve({ name: "John", age: 24 });
-            } else {
-                reject(new Error("Number is too low"))
-            }
-    })
-}
-
-myNewPromise(isLogged)
-    .then((num) => {
-        console.log(num);
-        return num;
-    })
-    .then((num) => secondPromise(num))
-    .then((obj) => console.log(obj))
-    .catch((err) => console.error(err))
-    .finally(() => console.log("The code is still working!"))
+  firstPromise
+  .then((num) => secondPromise (num))
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.error(error.message);
+  })
+  .finally(() => {
+    console.log("Promise chain completed!");
+  });

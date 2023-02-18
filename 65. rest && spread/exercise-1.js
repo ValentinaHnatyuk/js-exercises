@@ -1,9 +1,5 @@
-function sum(...rest) {
-    let sum = 0;
-    for(num of rest) {
-        sum += num;
-    }
-    return sum;
+function sum(...numbers) {
+  return numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 }
 
 console.log(sum(1, 2, 3, 4, 5));

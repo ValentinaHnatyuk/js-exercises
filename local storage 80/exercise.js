@@ -9,6 +9,7 @@ const localUserCookie = (user) => {
   return localStorage.setItem("user", userName);
 }
 
+
 localUserCookie(user);
 
 const printCookie = (nameItem) => {
